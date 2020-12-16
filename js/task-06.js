@@ -7,18 +7,23 @@ while (true) {
     input = prompt('Введите число');
 
     if (!+input) {
+        if (input){
+        alert('Введено не число');
+    }
         for (let i = 0; i < numbers.length; i += 1) {
-            total += numbers[i];
+            total += +numbers[i];
         } message = `Общая сумма чисел равна ${total}`;
         break;
-    }
-    input = Number(input);
-    const notANumber = Number.isNaN(input);
+    } 
 
-    if (notANumber) {
-        alert('Было введено не число, попробуйте еще раз!');
-        continue;
-    }
+
+    // input = Number(input);
+    // const notANumber = Number.isNaN(input);
+
+    // if (notANumber) {
+        
+    //     continue;
+    // }
     numbers.push(input);
 }
 console.log(message);
